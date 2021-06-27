@@ -56,5 +56,5 @@ Output:
 
 ## Clean up
 
-- Run `4_ingress_remove.sh` to remove the test apps and ingress-controller from your cluster
+- Run `./scripts/4_ingress_remove.sh` to remove the test apps and ingress-controller from your cluster
 - Run `kind delete cluster` to remove the cluster
