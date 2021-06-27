@@ -10,10 +10,10 @@ Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.i
 
 ## Cluster setup
 
-- Prepare kind cluster with nodeports
+- Prepare kind cluster with ports 1080->80 and 1443->443
 
 ```bash
-./0_kind_setup.sh
+kind create cluster --config="cluster-config.yml"
 ```
 
 ## Usage
@@ -21,19 +21,26 @@ Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.i
 1. Deploy ingress controller to cluster
 
 ```bash
-./1_ingress_setup.sh
+kubectl apply -f kind-ingress.yml
+
+kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=90s
 ```
 
 2. Deploy [test application](testapps.yml) (pods, services and ingress)
 
 ```bash
-./2_deploy_apps.sh
+kubectl apply -f testapps.yml
 ```
 
 3. Run curl against the ingress controller on the specified ports/paths
 
 ```bash
-./3_test_apps.sh
+curl localhost:1080/foo
+
+curl localhost:1080/bar
 ```
 
 ## Clean up
