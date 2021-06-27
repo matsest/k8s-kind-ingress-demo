@@ -4,6 +4,7 @@ metadata:
   name: foo-app
   labels:
     app: foo
+    workload: ingress-demo
 spec:
   containers:
   - name: foo-app
@@ -15,6 +16,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: foo-service
+  labels:
+    workload: ingress-demo
 spec:
   selector:
     app: foo
@@ -28,6 +31,7 @@ metadata:
   name: bar-app
   labels:
     app: bar
+    workload: ingress-demo
 spec:
   containers:
   - name: bar-app
@@ -39,6 +43,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: bar-service
+  labels:
+    workload: ingress-demo
 spec:
   selector:
     app: bar
@@ -50,6 +56,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-ingress
+  labels:
+    workload: ingress-demo
 spec:
   rules:
   - http:

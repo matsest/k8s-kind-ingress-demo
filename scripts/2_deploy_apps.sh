@@ -2,4 +2,4 @@
 
 echo "Deploying k8s resources"
 
-kubectl apply -f testapps.yml
+kubectl apply -f workloads.yml

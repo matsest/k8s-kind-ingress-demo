@@ -33,10 +33,15 @@ kubectl wait --namespace ingress-nginx \
   --timeout=90s
 ```
 
-2. Deploy [test application](testapps.yml) (pods, services and ingress)
+2. Deploy the [example workloads](workloads.yml) (pods, services and ingress)
 
 ```bash
-kubectl apply -f testapps.yml
+kubectl apply -f workloads.yml
+
+kubectl wait \
+  --for=condition=ready pod \
+  --selector=workload=ingress-demo \
+  --timeout=90s
 ```
 
 3. Run curl against the ingress controller on the specified ports/paths
@@ -56,5 +61,6 @@ Output:
 
 ## Clean up
 
-- Run `./scripts/4_ingress_remove.sh` to remove the test apps and ingress-controller from your cluster
-- Run `kind delete cluster` to remove the cluster
+- Run `kubectl delete -f workloads.yml` if you only want to remove the workloads
+- Run `./scripts/4_ingress_remove.sh` if you want to remove both the example workload and the ingress controller from your cluster
+- Run `kind delete cluster` to remove the full cluster
