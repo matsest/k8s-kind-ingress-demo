@@ -2,6 +2,8 @@
 
 Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.io/docs/user/ingress/)
 
+![](diagram.png)
+
 ## Prerequisites
 
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
