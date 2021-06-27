@@ -6,9 +6,10 @@ Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.i
 
 ## Prerequisites
 
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 - [Docker](https://www.docker.com/) or [Podman](https://podman.io/)
   - If you're running Podman, please see [this](https://kind.sigs.k8s.io/docs/user/rootless/).
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
 ## Cluster setup
 
@@ -64,3 +65,8 @@ Output:
 - Run `kubectl delete -f workloads.yml` if you want to remove the example workloads
 - Run `kubectl delete -f kind-nginx-ingress.yml` if you want to remove the ingress controller
 - Run `kind delete cluster` to remove the full cluster
+
+## Acknowledgements
+
+- This guide is based on the existing [kind](https://kind.sigs.k8s.io/) docs on [setting up a nginx ingress controller](https://kind.sigs.k8s.io/docs/user/ingress/). Some minor tweaks in k8s specs, updated to use Ingress v1 and customized to run on rootless Docker/Podman.
+- Diagrams created with [cloudskew](https://github.com/cloudskew/cloudskew)
