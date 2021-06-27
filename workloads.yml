@@ -1,3 +1,5 @@
+# Based on https://github.com/kubernetes-sigs/kind/blob/main/site/static/examples/ingress/usage.yaml
+
 kind: Pod
 apiVersion: v1
 metadata:
