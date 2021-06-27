@@ -18,7 +18,7 @@ kind create cluster --config="cluster-config.yml"
 
 ## Usage
 
-1. Deploy ingress controller to cluster
+1. Deploy [nginx ingress controller](kind-ignress.yml) to cluster
 
 ```bash
 kubectl apply -f kind-ingress.yml
@@ -41,6 +41,13 @@ kubectl apply -f testapps.yml
 curl localhost:1080/foo
 
 curl localhost:1080/bar
+```
+
+Output:
+
+```bash
+'hello world! this is foo'
+'hello world! this is bar'
 ```
 
 ## Clean up
