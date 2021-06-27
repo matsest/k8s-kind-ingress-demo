@@ -2,7 +2,7 @@
 
 Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.io/docs/user/ingress/)
 
-![](diagram.png)
+![](assets/diagram.png)
 
 ## Prerequisites
 
@@ -12,18 +12,20 @@ Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.i
 
 ## Cluster setup
 
-- Prepare kind cluster with ports 1080->80 and 1443->443
+- Prepare kind cluster with port mappings:
 
 ```bash
 kind create cluster --config="cluster-config.yml"
 ```
+
+> Note: To support running as rootless Docker/Podman we bind http (80) to port 1080 on localhost and https (443) to port 1443 on localhost
 
 ## Usage
 
 1. Deploy [nginx ingress controller](kind-ignress.yml) to cluster
 
 ```bash
-kubectl apply -f kind-ingress.yml
+kubectl apply -f kind-nginx-ingress.yml
 
 kubectl wait --namespace ingress-nginx \
   --for=condition=ready pod \
