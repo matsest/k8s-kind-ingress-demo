@@ -55,12 +55,12 @@ curl localhost:1080/bar
 Output:
 
 ```bash
-'hello world! this is foo'
-'hello world! this is bar'
+'hello world! this is foo!'
+'hello world! this is bar!'
 ```
 
 ## Clean up
 
-- Run `kubectl delete -f workloads.yml` if you only want to remove the workloads
-- Run `./scripts/4_ingress_remove.sh` if you want to remove both the example workload and the ingress controller from your cluster
+- Run `kubectl delete -f workloads.yml` if you want to remove the example workloads
+- Run `kubectl delete -f kind-nginx-ingress.yml` if you want to remove the ingress controller
 - Run `kind delete cluster` to remove the full cluster

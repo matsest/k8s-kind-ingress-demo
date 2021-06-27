@@ -10,7 +10,7 @@ spec:
   - name: foo-app
     image: hashicorp/http-echo:0.2.3
     args:
-    - "-text='hello world! this is foo'"
+    - "-text='hello world! this is foo!'"
 ---
 kind: Service
 apiVersion: v1
@@ -37,7 +37,7 @@ spec:
   - name: bar-app
     image: hashicorp/http-echo:0.2.3
     args:
-    - "-text='hello world! this is bar'"
+    - "-text='hello world! this is bar!'"
 ---
 kind: Service
 apiVersion: v1
