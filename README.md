@@ -8,8 +8,8 @@ Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.i
 
 - [Docker](https://www.docker.com/) or [Podman](https://podman.io/)
   - If you're running Podman, please see [this](https://kind.sigs.k8s.io/docs/user/rootless/).
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) (Tested with v0.22.0)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/) (Tested with v1.29.2 - same version as cluster)
 
 ## Cluster setup
 
