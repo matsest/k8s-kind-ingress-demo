@@ -2,7 +2,10 @@
 
 Setting up an [ingress controller on a kind k8s cluster](https://kind.sigs.k8s.io/docs/user/ingress/)
 
-![](assets/diagram.png)
+> [!WARNING]
+> Beginning March 2026 the [Ingress NGINX controller](https://github.com/kubernetes/ingress-nginx#ingress-nginx-retirement) is deprecated. More info [here](https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/). If you are looking at this repo after March 2026 please see the [migration guide to Gateway API](https://gateway-api.sigs.k8s.io/guides/getting-started/migrating-from-ingress-nginx/) or see the latest [kind docs on Ingress](https://kind.sigs.k8s.io/docs/user/ingress/).
+
+![diagram](assets/diagram.png)
 
 ## Prerequisites
 
